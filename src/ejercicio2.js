@@ -31,7 +31,7 @@ function encabezado(texto, num) {
     } else if (num < 1 || num > 6) {
         alert("Error: tamaño de encabezado no válido");
     } else {
-        return "<h"+num+">"+texto+"</h"+num+">";
+        document.write("<h" + num + ">" +texto + "</h" + num + ">");
     }
 }
 

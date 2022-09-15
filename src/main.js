@@ -1,4 +1,6 @@
-var presentacion = "Hola mundo";
-document.write("<h2>"+presentacion+"</h2>");
+function muestra() {
+    alert("Gracias");
+}
 
+//document.getElementById("boton").onclick = muestra;
 

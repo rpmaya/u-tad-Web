@@ -4,15 +4,37 @@
         <meta charset="utf-8" />
         <title>Repaso Javascript</title>
         <script src="main.js" type="text/Javascript"></script>
+        <script src="ejercicioEventos.js" type="text/Javascript"></script>
+        <script src="ejercicioGaleria.js" type="text/Javascript"></script>
     </head>
     <body>
         <h1>
             Repasando JavaScript
         </h1>
         <p>Ejercicios</p>
-        <!--<div id="datos"></div>
+        <!--<div id="datos"></div> -->
+        <!--
         <script src="ejercicio1.js" type="text/Javascript"></script>
-        -->
         <script src="ejercicio2.js" type="text/Javascript"></script>
+        -->
+        <!--
+        <input id="boton" type="button" value="Púlsame"/>
+        <script src="main.js" type="text/Javascript"></script>
+        -->
+        <!-- <button onclick="muestra()">Púlsame</button> -->
+        <div>
+            <h2>Ejemplo de setInterval</h2>
+            <p id="reloj">00:00:10</p>
+            <p>
+                <button onclick="activar()">Activar</button>
+                <button onclick="desactivar()">Parar</button>
+            </p>
+        </div>
+        
+        <div id="gallery">
+            <button id="prevButton" onclick="prev()">Anterior</button>
+            <img id="image" src="images/moto01.jpg">
+            <button id="nextButton" onclick="next()">Siguiente</button>
+        </div>
     </body>
 </html>
