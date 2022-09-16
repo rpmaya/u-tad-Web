@@ -71,6 +71,7 @@ function refreshPage(){
 	la tabla de HTML.
 */
 function checkWin(){
+    /*
 	var derecha = false;
 	var izquierda = false;
 	if(document.getElementById(2).src.includes("R.png"))
@@ -81,12 +82,26 @@ function checkWin(){
 		if(document.getElementById(5).src.includes("L.png"))
 			if(document.getElementById(6).src.includes("L.png"))
 				izquierda = true;
+    */
+    var derecha = (document.getElementById(2).src.includes("R.png") && 
+                   document.getElementById(1).src.includes("R.png") &&
+                   document.getElementById(0).src.includes("R.png"));
+
+    var izquierda = (document.getElementById(4).src.includes("L.png") &&
+                     document.getElementById(5).src.includes("L.png") &&
+                     document.getElementById(6).src.includes("L.png"))
+/*
 	if(derecha)
 		if(izquierda)	
 			setTimeout(()=>{
 				alert("Has ganado!");
 			},1)		
-
+*/
+    if (derecha && izquierda) {
+        setTimeout(()=>{
+            alert("Has ganado!");
+        },1)
+    }
 }
 
 /*
