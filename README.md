@@ -2,8 +2,8 @@
 
 ## Repaso Javascript (ejercicios)
 
-- [Ejercicio 1](https://github.com/rpmaya/u-tad-Web/blob/main/src/ejercicio1.js)
-- [Ejercicio 2](https://github.com/rpmaya/u-tad-Web/blob/main/src/ejercicio2.js)
-- [Ejercicio Galería](https://github.com/rpmaya/u-tad-Web/blob/main/src/ejercicioGaleria.js)
-- [Ejercicio Eventos](https://github.com/rpmaya/u-tad-Web/blob/main/src/ejercicioEventos.js)
+- [Ejercicio Área](https://github.com/rpmaya/u-tad-Web/blob/main/src/area.html)
+- [Ejercicio Date](https://github.com/rpmaya/u-tad-Web/blob/main/src/date.html)
+- [Ejercicio Galería](https://github.com/rpmaya/u-tad-Web/blob/main/src/index.html)
+- [Ejercicio Eventos](https://github.com/rpmaya/u-tad-Web/blob/main/src/index.html)
 - [Práctica Ranas](https://github.com/rpmaya/u-tad-Web/blob/main/ranas/index.html)
