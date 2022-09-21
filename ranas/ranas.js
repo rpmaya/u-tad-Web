@@ -3,44 +3,44 @@
 */
 function mueveRana(el)
 {
-	var id_el = parseInt(el.id, 10);
-	if (document.getElementById(el.id).src.includes("L.png")) 
+	var id_el = parseInt(el.id, 10); //Parse Integer (Base 10).
+	if (document.getElementById(el.id).src.includes("???")) //Get image L.png, B.png or R.png
 	{
-//		alert("It is a Left Frog")
+//		It is a Left Frog
 		
 		//Can I move straight forward?
-		if(document.getElementById(id_el+1).src.includes("B.png")) 
+		if(???) 
 		{
 //			alert("Moving the frog forward!")
 			frog_swap(id_el,id_el+1)
 		} else {
-			if(document.getElementById(id_el+2).src.includes("B.png")) 
+			// Can I jump forward on a frog?
+			if(???) 
 			{
-//				alert("Moving the frog forward!")
-				frog_swap(id_el,id_el+2)
+//				alert("Moving the frog forward on a frog!")
+				???
 			}		
 		}
 		
 	} else { 
-		if (document.getElementById(el.id).src.includes("R.png")) 
+		if (document.getElementById(el.id).src.includes("???")) //Get image L.png, B.png or R.png
 		{	
-			if(document.getElementById(id_el-1).src.includes("B.png")) 
+		// It's a Rigth Frog
+			if(???) 
 			{
 //				alert("Moving the frog forward!")
-				frog_swap(id_el,id_el-1)
+				???
 			} else {
-			if(document.getElementById(id_el-2).src.includes("B.png")) 
+				if(???) 
 			{
 //				alert("Moving the frog forward!")
-				frog_swap(id_el,id_el-2)
+				???
 			}		
 		}
 			
 		} else {
 			alert("You can not move the blank space!")
 		}	
-		
-
 		
 	}
 	checkWin();
@@ -52,14 +52,14 @@ function mueveRana(el)
 */
 function frog_swap(i,j)
 {
-	var copy_src = document.getElementById(i).src;
-	document.getElementById(i).src = document.getElementById(j).src;
-	document.getElementById(j).src = copy_src;
+	???
+	???
+	???
 }
 
 
 /*
-	refreshPage: reinicia el partido.
+	refreshPage: reinicia el juego.
 */
 function refreshPage(){
     window.location.reload();
@@ -70,15 +70,11 @@ function refreshPage(){
 	checkWin: comproba si el partido ha terminado con victoria para el usuario utilizando
 	la tabla de HTML.
 */
-function checkWin(){
+function checkWin() {
    
-    var derecha = (document.getElementById(2).src.includes("R.png") && 
-                   document.getElementById(1).src.includes("R.png") &&
-                   document.getElementById(0).src.includes("R.png"));
+    var derecha = ???
 
-    var izquierda = (document.getElementById(4).src.includes("L.png") &&
-                     document.getElementById(5).src.includes("L.png") &&
-                     document.getElementById(6).src.includes("L.png"))
+    var izquierda = ???
 
     if (derecha && izquierda) {
         setTimeout(()=>{
@@ -104,6 +100,7 @@ function checkBlock(){
 	if(	document.getElementById(4).src.includes("L.png") &&
 		document.getElementById(5).src.includes("L.png") && 
 		document.getElementById(6).src.includes("R.png")){
+
 		setTimeout(()=>{
 			alert("Juego bloqueado!");
 		},1)	
@@ -116,7 +113,8 @@ function checkBlock(){
 			document.getElementById(i+1).src.includes("L.png") &&
 			document.getElementById(i+2).src.includes("R.png") && 
 			document.getElementById(i+3).src.includes("R.png")){
-			setTimeout(()=>{ //A revisar
+
+			setTimeout(()=>{
 				alert("Juego bloqueado!");
 			},1)	
 		}
@@ -125,7 +123,7 @@ function checkBlock(){
 
 /*
 	algoritmo_hardcoded: resuelve el partido siempre que las ranas empiezen
-	desde las posiciones: L L L B R R R
+	desde las posiciones: L L L B R R R, finalizando en: RRRBLLL
 */
 function algoritmo_hardcoded(){
 	setTimeout(()=>{ frog_swap(3,2); },1000);
