@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title> Ejemplo JQUERY </title>
+	</head>
+	<body>
+		<h1 id="hola"> Mi primer ejemplo con JQUERY</h1>
+		
+		<p class="parafo"> 1 - Pincha me y sorprenderás! </p>
+		<p class="parafo"> 2 - Pincha me y sorprenderás! </p>
+		<p class="parafo"> 3 - Pincha me y sorprenderás! </p>
+
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>		
+		<script>
+			// con JS: document.getElementById("hola").innerHTML = "Hola";
+			
+			// con JQUERY - $ es equivalente a jQuery:
+			
+			jQuery(document).ready(
+				jQuery("#hola").text("Es momento de aprender JQUERY!").css("border","10px solid purple").css("background-color","pink")
+			)
+
+			$(document).ready(
+				$(".parafo").css("color","blue")
+			)
+
+			
+			$(document).ready( //Ejecuta despues que el documento termine de cargar.
+				function(){ //Esto es una función anomima
+					$("p").click( // Crear lo de onclick="function()" en todos los elementos "p"
+						function(){ // Otra función anomima
+							$(this).hide() //La encadenación de cosas de JQUERY que quieres hacer.
+						}
+					)
+				}
+			)
+			
+			
+		</script>			
+	</body>
+</html>
