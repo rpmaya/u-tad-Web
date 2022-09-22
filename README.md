@@ -9,4 +9,5 @@
 - [Práctica Ranas](https://github.com/rpmaya/u-tad-Web/blob/main/ranas/index.html)
 
 ## JQuery
-- [Ejemplo 1](https://github.com/rpmaya/u-tad-Web/blob/main/src/ajaxEj1.html)
+- [Ejemplo presentación](https://github.com/rpmaya/u-tad-Web/blob/main/jquery/jquery.html)
+- [Ejemplo 1](https://github.com/rpmaya/u-tad-Web/blob/main/jquery/ejemplo_jquery_1.html)
