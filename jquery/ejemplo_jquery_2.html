@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title> Ejemplo JQUERY </title>
+	</head>
+	<body>
+		<h1 id="hola"> Mi primer ejemplo con JQUERY</h1>
+		
+		<ul id="contenedor">
+		</ul>
+		
+		<div id="pinchame">
+			Pincha aqui!
+			<img id="interrogacion" src="image-cover.jpg" alt="" width="100" height ="123" 
+				style="position: relative; left: 10px;">
+		</div>
+
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>		
+		<script>
+			// con JS: document.getElementById("hola").innerHTML = "Hola";
+			
+			// con JQUERY - $ es equivalente a jQuery:
+			
+			jQuery(document).ready(
+				jQuery("#hola").text("Es momento de aprender JQUERY!").css("border","10px solid purple").css("background-color","pink")
+			)
+
+			
+			$(document).ready( //Ejecuta después que el documento termine de cargar. 
+				function(){ //Esto es una función anomima
+					var date = new Date();
+					var hora_del_dia = date.getHours();
+					var elem;
+					
+					if (hora_del_dia < 12){
+						elem = $('<h1>').text('Mi segundo ejemplo con JQUERY por la mañana!').attr("id","saludos").hide();
+					} else {
+						elem = $('<h1>').text('Mi segundo ejemplo con JQUERY por la tarde!').attr("id","saludos").hide();
+					}		
+					$('#contenedor').append(elem);
+					$('#saludos').show("slow");			
+					
+				}
+			);
+			
+			$(document).ready( //Ejecuta despues que el documento termine de cargar.
+				function(){ //Esto es una función anómima
+					$("#pinchame").click( // Crear lo de onclick="function()" en todos los elementos "p"
+						function (){
+							$("#interrogacion").animate(
+								{
+									opacity: 0.25,
+									//widht: ["toggle","swing"],
+									left: "+=50",
+									height:"swing"
+									//height: ["toggle","swing"]
+								}, 1000, function (){
+									$(this).after("<p>Función que se ejecuta cuando la animación termina!</p>")
+									//Función que se ejecuta cuando la animación termina!
+								}
+							)
+						}
+					)
+				}
+			)			
+			
+			
+			
+			
+		</script>			
+	</body>
+</html>
