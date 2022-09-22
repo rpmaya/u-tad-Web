@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title> Registro Alotuz </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+	
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body>
+
+<button id="en" class="translate"> English </button>
+<button id="es" class="translate"> Español </button>
+<button id="pt" class="translate"> Português </button>
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Alotuz</h3>
+                        <p class="lang" key="slogan">Transformando pessoas atravéz de pessoas!</p>
+                        <input type="submit" name="" value="Entrar"/><br/>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active lang" key="speaker" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Palestrante</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link lang" key="company" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Empresa</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading lang" key="form-header-speaker">Cadastro como Palestrante</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control lang" key="name" placeholder="Nome *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control lang" key="surname" placeholder="Sobrenome *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control lang" key="password" placeholder="Senha *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="male" checked>
+                                                    <span class="lang"  key="male"> Masculino </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="female">
+                                                    <span class="lang"  key="female"> Feminino </span> 
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control lang"  key="email" placeholder="Email *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control lang"  key="phone" placeholder="Telefone *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control lang"  key="confirm-password"  placeholder="Confirmar Senha *" value="" />
+                                        </div>
+                                        <input type="submit" class="btnRegister lang"  key="register"  value="Registrar"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <h3 class="register-heading lang" key="form-header-company">Cadastro como Empresa</h3>
+
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Nome *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Sobrenome *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Senha *" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Email *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Telefone *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control"  placeholder="Confirmar Senha *" value="" />
+                                        </div>
+                                        <input type="submit" class="btnRegister lang" key="register"  value="Registrar"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+<script type="text/javascript">
+
+	var arrLang = {
+		'en': {
+			'form-header-speaker':'Registration as Speaker',
+			'form-header-company':'Registration as Company',
+			'slogan': 'Transforming people through people!',
+			'speaker':'Speaker',
+			'company':'Company',
+			'name':'Name',
+			'surname':'Surname',
+			'password':'Password',
+			'male':'Male',
+			'female':'Female',
+			'email':'E-mail',
+			'phone':'Phone number',
+			'confirm-password':'Confirm Password',
+			'register':'Register'
+		},
+		'es': {
+			'form-header-speaker':'Registro como Ponente',
+			'form-header-company':'Registro como Empresa',
+			'slogan': '¡Transformando personas a través de personas!',
+			'speaker':'Ponente',
+			'company':'Empresa',
+			'name':'Nombre',
+			'surname':'Apelido',
+			'password':'Contraseña',
+			'male':'Hombre',
+			'female':'Mujer',
+			'email':'Email',
+			'phone':'Telefóno',
+			'confirm-password':'Confirmar Contraseña',
+			'register':'Registrar'
+		},
+		'pt': {
+			'form-header-speaker':'Cadastro como Palestrante',
+			'form-header-company':'Cadastro como Empresa',
+			'slogan': 'Transformando pessoas atravéz de pessoas!',
+			'speaker':'Palestrante',
+			'company':'Empresa',
+			'name':'Nome',
+			'surname':'Sobrenome',
+			'password':'Senha',
+			'male':'Masculino',
+			'female':'Feminino',
+			'email':'E-mail',
+			'phone':'Número de telefone',
+			'confirm-password':'Confirmar Senha',
+			'register':'Registrar'
+		}	
+	}
+
+	
+
+
+	$(document).ready(
+		function(){
+			$('.translate').click(
+				function() {
+					//alert($(this).attr('id'));
+					var lang = $(this).attr('id');
+					$('.lang').each(
+						function(index, item){
+							//$(item).text('Hacked by Chinese');
+							//$(item).text($(item).attr('key'))
+							//alert($(item).val());
+
+							if($(item).val() != "") {
+								$(item).val(arrLang[lang][$(item).attr('key')])
+							} else if($(item).placeholder != "undefined"){
+								//alert($(item).placeholder);
+								$(item).prop('placeholder',arrLang[lang][$(item).attr('key')]);
+								//$(item).placeholder(arrLang[lang][$(item).attr('key')]);
+							} 
+							 else {
+								$(item).text(arrLang[lang][$(item).attr('key')]);
+							}
+							
+							
+						}
+					);
+				}
+			)
+		}
+	);
+
+</script>
+</body>
+</html>
