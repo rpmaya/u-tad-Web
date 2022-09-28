@@ -51,31 +51,6 @@ var arrLang = {
 
 $(document).ready(
     function(){
-        $('.translate').click(
-            function() {
-                //alert($(this).attr('id'));
-                var lang = $(this).attr('id');
-                $('.lang').each(
-                    function(index, item){
-                        //$(item).text('Hacked by Chinese');
-                        //$(item).text($(item).attr('key'))
-                        //alert($(item).val());
-
-                        if($(item).val() != "") {
-                            $(item).val(arrLang[lang][$(item).attr('key')])
-                        } else if($(item).placeholder != "undefined"){
-                            //alert($(item).placeholder);
-                            $(item).prop('placeholder',arrLang[lang][$(item).attr('key')]);
-                            //$(item).placeholder(arrLang[lang][$(item).attr('key')]);
-                        } 
-                         else {
-                            $(item).text(arrLang[lang][$(item).attr('key')]);
-                        }
-                        
-                        
-                    }
-                );
-            }
-        )
+        //TODO
     }
 );
