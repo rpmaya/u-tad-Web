@@ -55,22 +55,5 @@ var arrLang = {
 $(document).ready(
     function () {
         //TODO
-        $(".translate").click(
-            function() {
-                var lang = $(this).attr('id');
-                $(".lang").each(
-                    function (index) {    
-                        if($(this).val() != "") {
-                           $(this).val(arrLang[lang][$(this).attr('key')])
-                        } else {
-                            if($(this).placeholder != "undefined"){
-                               $(this).prop('placeholder', arrLang[lang][$(this).attr('key')]);         
-                            }
-                            $(this).text(arrLang[lang][$(this).attr('key')]);
-                        }
-                    }
-                );
-            }
-        )
     }
 );
