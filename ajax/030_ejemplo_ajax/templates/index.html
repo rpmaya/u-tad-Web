@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AJAX </title>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	</head>
+
+	<body>
+		<h1> Ejemplo 1 - AJAX </h1>
+		<form id="form1">
+			<input id="idEmail" type="email" placeholder="Email"> <br>
+			<input id="idNombre" type="text" placeholder="Primer nombre"> <br>
+			<button type="submit"> Enviar </button>
+		</form>
+		<div id="msgError"> </div>
+		
+		<script>
+			$(document).ready(function(){
+				$('#form1').on('submit',function(event){
+				  // $.ajax().done(); //sintax general de AJAX
+				  $.ajax({ //Envio de los datos
+				    data: {
+						name : $('#idNombre').val(), 
+						email : $('#idEmail').val()
+					},
+					type: 'POST',
+					url : 'http://127.0.0.1:5000/proceso'
+				  }).done( function(data){ // La recepción de la respuesta asincrona.
+					 
+					 if(data.error){
+						//alert(data.error);
+						$("#msgError").text(data.error).show();
+					 } else {
+						//alert(data.name);
+						$("#msgError").text(data.name).show();
+					 }
+					 
+				  }); //sintax general de AJAX
+				  //alert("Interrumpiendo el envio del formulario.");
+				  event.preventDefault(); // Interrumpir el envio del formulario.
+				});
+			});
+		</script>
+		
+		
+	</body>
+</html>
