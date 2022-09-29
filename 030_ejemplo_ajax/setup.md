@@ -7,8 +7,6 @@ pip install flask_cors
 ```
 
 ```python
-
     from flask_cors import CORS
-
     CORS(app)
-``
+```
