@@ -16,3 +16,4 @@
 
 ## Ajax
 - [Ejemplo presentación](https://github.com/rpmaya/u-tad-Web/tree/main/030_ejemplo_ajax)
+- [Ejercicio Alotuz](https://github.com/rpmaya/u-tad-Web/tree/main/ajax/alotuz)
