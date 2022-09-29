@@ -13,3 +13,6 @@
 - [Ejemplo presentación](https://github.com/rpmaya/u-tad-Web/blob/main/jquery/jquery.html)
 - [Ejemplo 1](https://github.com/rpmaya/u-tad-Web/blob/main/jquery/ejemplo_jquery_1.html)
 - [Ejercicio Multiples lenguajes](https://github.com/rpmaya/u-tad-Web/tree/main/jquery/multipleLanguages)
+
+## Ajax
+- [Ejemplo presentación](https://github.com/rpmaya/u-tad-Web/tree/main/030_ejemplo_ajax)
