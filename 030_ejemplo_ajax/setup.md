@@ -1,6 +1,6 @@
 # Install Flask
 
-[How to](https://phoenixnap.com/kb/install-flask)
+[Follow this link](https://phoenixnap.com/kb/install-flask) and then
 
 ```script
 pip install flask_cors
