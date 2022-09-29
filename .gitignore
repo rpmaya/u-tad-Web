@@ -4,3 +4,4 @@ coverage
 coverage.json
 typechain
 ajaxenv
+__pycache__
