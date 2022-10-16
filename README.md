@@ -18,6 +18,9 @@
 - [Ejemplo presentación](https://github.com/rpmaya/u-tad-Web/tree/main/030_ejemplo_ajax)
 - [Ejercicio Alotuz](https://github.com/rpmaya/u-tad-Web/tree/main/ajax/alotuz)
 
+## Bootstrap
+- [Ejemplo 1](#)
+
 ## Ejercicio de repaso
 - **Piedra, papel o tijera**
 - Seleccionar número de humanos con un desplegable con valores posibles 0, 1 ó 2.
