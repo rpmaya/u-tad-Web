@@ -1,0 +1,5 @@
+[
+    {"nombre": "Alfonso", "apellidos": "Izquierdo", "fechaNacimiento": "27/11/1971", "sexo": "Hombre", "tiempoParcial": true},
+    {"nombre": "Macarena", "apellidos": "Díaz", "fechaNacimiento": "27/11/1973", "sexo": "Mujer", "tiempoParcial": false},
+    {"nombre": "Eva", "apellidos": "Pérez", "fechaNacimiento": "21/10/1982", "sexo": "Mujer", "tiempoParcial": false}
+]
