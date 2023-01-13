@@ -9,8 +9,8 @@ const addTODO = () => {
 }
 
 const filterTODOs = () => {
+    const texto = $('#buscar').val();
     $("li").show().filter(function(index) {
-        const texto = $('#buscar').val()
         return $(this).text().search(texto) < 0;
     }).hide();
 }
