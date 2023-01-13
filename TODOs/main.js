@@ -11,8 +11,6 @@ const addTODO = () => {
 const filterTODOs = () => {
     $("li").show().filter(function(index) {
         const texto = $('#buscar').val()
-        console.log(texto);
-        console.log($(this).text())
         return $(this).text().search(texto) < 0;
     }).hide();
 }
