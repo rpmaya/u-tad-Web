@@ -2,9 +2,13 @@ import React from 'react';
 
 function TeamMember() {
   return (
-    <>
-      {/* Contenido del componente */}
-    </>
+    <div className='cont-teamMember'>
+      <img 
+        className='img-teamMember' 
+        src={require('../images/Borja-Montoro.png')}
+        alt='Foto de Borja'  
+      />
+    </div>
   );
 }
 
