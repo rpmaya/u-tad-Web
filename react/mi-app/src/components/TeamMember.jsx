@@ -17,4 +17,7 @@ function TeamMember() {
   );
 }
 
+// Existe exportanción nombrada (varias): export function TeamMember() (al importar hay que indicar entre llaves { TeamMembe r})
+
+// y por defecto (el único elemento a exportar), no es necesario indicar entre llaves TeamMember:
 export default TeamMember;
