@@ -6,9 +6,12 @@ function App() {
     <div className="App">
       <div className="utad-logo-container">
         <img  
-          className="u-tad-logo"
+          className="utad-logo"
           src={logo}
           alt="Logo de u-tad" />
+      </div>
+      <div className='main-container'>
+        
       </div>
     </div>
   );
