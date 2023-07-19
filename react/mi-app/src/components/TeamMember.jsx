@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react'; //Opcional, es para versiones antiguas
 import '../styles/TeamMember.css';
 
 function TeamMember(props) {
@@ -7,8 +7,7 @@ function TeamMember(props) {
       <img 
         className='img-member' 
         src={require(`../images/${props.image}.png`)}
-        alt='Foto de Borja'  
-      />
+        alt={`Foto de ${props.image}`} />
       <div className='cont-text'>
         <p className='name-member'>{props.name}</p>
         <p className='position-member'>{props.position}</p>
