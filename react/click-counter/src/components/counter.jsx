@@ -1,4 +1,4 @@
-
+import '../styles/Counter.css'
 
 function Counter({ numClicks }) {
   return (
