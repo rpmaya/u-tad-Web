@@ -22,15 +22,15 @@ function App() {
           alt="Logo de u-tad" />
       </div>
       <div className='main-container'>
+        <Counter numClicks='5' />
         <Button 
           text="Click"
           isClickButton={true}
-          handleClick={handleClick}/>
+          handleClick={handleClick} />
         <Button 
           text="Restart"
           isClickButton={false}
-          handleClick={counterRestart}/>
-
+          handleClick={counterRestart} />
       </div>
     </div>
   );
