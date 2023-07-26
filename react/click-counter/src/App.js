@@ -1,3 +1,5 @@
+import Button from './components/button';
+import Counter from './components/counter';
 import './App.css';
 import logo from './images/Logo-U-tad.webp'
 
@@ -11,7 +13,7 @@ function App() {
           alt="Logo de u-tad" />
       </div>
       <div className='main-container'>
-        
+        <Button />
       </div>
     </div>
   );
