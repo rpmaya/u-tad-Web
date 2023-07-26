@@ -4,6 +4,15 @@ import './App.css';
 import logo from './images/Logo-U-tad.webp'
 
 function App() {
+
+  const handleClick = () => {
+    console.log("Click");
+  }
+
+  const counterRestart = () => {
+    console.log("Restart")
+  }
+
   return (
     <div className="App">
       <div className="utad-logo-container">
@@ -13,7 +22,15 @@ function App() {
           alt="Logo de u-tad" />
       </div>
       <div className='main-container'>
-        <Button />
+        <Button 
+          text="Click"
+          isClickButton={true}
+          handleClick={handleClick}/>
+        <Button 
+          text="Restart"
+          isClickButton={false}
+          handleClick={counterRestart}/>
+
       </div>
     </div>
   );

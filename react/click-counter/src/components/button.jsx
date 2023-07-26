@@ -1,8 +1,8 @@
 function Button({ text, isClickButton, handleClick }) {
   return (
-    <button>
+    <button
       className={ isClickButton ? 'click-button' : 'restart-button' }
-      onClick={handleClick}
+      onClick={handleClick} >
       {text}
     </button>
   );
