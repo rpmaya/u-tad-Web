@@ -83,7 +83,7 @@ function App() {
            isClickButton={false}
            handleClick={manualInit} />
         <input 
-          className="Input"
+          className="input"
           ref={manual} 
           type="text" 
           placeholder="Init number" />
