@@ -23,6 +23,23 @@ function App() {
       .then((numbers) => setNumClicks(numbers[0]));
   }
 
+  /* 
+  // It doesn't work, it's just an example of a POST request:
+  const randomInitPost = () => {
+    fetch('http://www.randomnumberapi.com/api/v1.0/random',
+    {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ "min": 1, "max": 100, "count": 1 })
+    })
+      .then((response) => response.json())  
+      .then((content) => console.log(content));
+  }
+  */
+
   /* Random Initialize  
   useEffect(() => {
     randomInit();
