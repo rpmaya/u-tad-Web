@@ -1,16 +1,20 @@
 import Button from './components/button';
 import Counter from './components/counter';
 import './App.css';
-import logo from './images/Logo-U-tad.webp'
+import logo from './images/Logo-U-tad.webp';
+import { useState } from 'react';
+
 
 function App() {
 
+  const [numClicks, setNumClicks] = useState(0);
+
   const handleClick = () => {
-    console.log("Click");
+    setNumClicks(numClicks + 1);
   }
 
   const counterRestart = () => {
-    console.log("Restart")
+    setNumClicks(0);
   }
 
   return (
@@ -22,7 +26,7 @@ function App() {
           alt="Logo de u-tad" />
       </div>
       <div className='main-container'>
-        <Counter numClicks='5' />
+        <Counter numClicks={numClicks} />
         <Button 
           text="Click"
           isClickButton={true}
