@@ -10,7 +10,7 @@ function App() {
   const [numClicks, setNumClicks] = useState(0);
 
   //Usamos useRef para capturar en manualInit el número introducido por el usuario en "input ref={manualInit}
-  const manualInit = useRef();
+  const manual = useRef();
 
   const handleClick = () => {
     setNumClicks(numClicks + 1);
@@ -20,11 +20,17 @@ function App() {
     setNumClicks(0);
   };
 
+  const manualInit = () => {
+    const num = Number(manual.current.value)
+    setNumClicks(num);
+    manual.current.value = null;
+  };
+
   const randomInit = () => {
     fetch('https://www.randomnumberapi.com/api/v1.0/randomnumber')
       .then((response) => response.json())  
       .then((numbers) => setNumClicks(numbers[0]));
-  }
+  };
 
   /* 
   // It doesn't work, it's just an example of a POST request:
@@ -40,7 +46,7 @@ function App() {
     })
       .then((response) => response.json())  
       .then((content) => console.log(content));
-  }
+  };
   */
 
   /* 
@@ -58,7 +64,7 @@ function App() {
           src={logo}
           alt="Logo de u-tad" />
       </div>
-      <div className='main-container'>
+      <div className="main-container">
         <Counter numClicks={numClicks} />
         <Button 
           text="Click"
@@ -69,10 +75,18 @@ function App() {
           isClickButton={false}
           handleClick={counterRestart} />
         <Button
-           text="Random"
+           text="Auto"
            isClickButton={false}
-           handleClick={randomInit}/>
-        <input ref={manualInit} type="text" placeholder="Inicializa número: " />
+           handleClick={randomInit} />
+        <Button
+           text="Manual"
+           isClickButton={false}
+           handleClick={manualInit} />
+        <input 
+          className="Input"
+          ref={manual} 
+          type="text" 
+          placeholder="Init number" />
       </div>
     </div>
   );
