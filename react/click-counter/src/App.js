@@ -40,7 +40,8 @@ function App() {
   }
   */
 
-  /* Random Initialize  
+  /* 
+  // Random Initialize  
   useEffect(() => {
     randomInit();
   }, [])
