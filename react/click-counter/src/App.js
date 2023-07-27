@@ -2,7 +2,7 @@ import Button from './components/button';
 import Counter from './components/counter';
 import './App.css';
 import logo from './images/Logo-U-tad.webp';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function App() {
@@ -16,6 +16,18 @@ function App() {
   const counterRestart = () => {
     setNumClicks(0);
   };
+
+  const randomInit = () => {
+    fetch('https://www.randomnumberapi.com/api/v1.0/randomnumber')
+      .then((response) => response.json())  
+      .then((numbers) => setNumClicks(numbers[0]));
+  }
+
+  /* Random Initialize  
+  useEffect(() => {
+    randomInit();
+  }, [])
+ */
 
   return (
     <div className="App">
@@ -35,6 +47,10 @@ function App() {
           text="Restart"
           isClickButton={false}
           handleClick={counterRestart} />
+        <Button
+           text="Random"
+           isClickButton={false}
+           handleClick={randomInit}/>
       </div>
     </div>
   );
