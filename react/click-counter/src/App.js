@@ -11,11 +11,11 @@ function App() {
 
   const handleClick = () => {
     setNumClicks(numClicks + 1);
-  }
+  };
 
   const counterRestart = () => {
     setNumClicks(0);
-  }
+  };
 
   return (
     <div className="App">
