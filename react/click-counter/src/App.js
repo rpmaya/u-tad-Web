@@ -2,12 +2,15 @@ import Button from './components/button';
 import Counter from './components/counter';
 import './App.css';
 import logo from './images/Logo-U-tad.webp';
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 
 function App() {
 
   const [numClicks, setNumClicks] = useState(0);
+
+  //Usamos useRef para capturar en manualInit el número introducido por el usuario en "input ref={manualInit}
+  const manualInit = useRef();
 
   const handleClick = () => {
     setNumClicks(numClicks + 1);
@@ -69,6 +72,7 @@ function App() {
            text="Random"
            isClickButton={false}
            handleClick={randomInit}/>
+        <input ref={manualInit} type="text" placeholder="Inicializa número: " />
       </div>
     </div>
   );
