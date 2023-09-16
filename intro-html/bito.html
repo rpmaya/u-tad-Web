@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- La declaración DOCTYPE indica que el documento es un archivo HTML -->
+
+<html lang="es">
+<!-- La etiqueta html envuelve todo el contenido de la página -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- La etiqueta meta define los metadatos del documento, como el conjunto de caracteres utilizado -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- La etiqueta meta viewport establece la escala inicial y el tamaño de la ventana de visualización en dispositivos móviles -->
+
+    <title>Título de la página</title>
+    <!-- La etiqueta title define el título de la página que se muestra en la pestaña del navegador -->
+</head>
+
+<body>
+    <!-- La etiqueta body envuelve todo el contenido visible en la página -->
+
+    <!-- Aquí puedes agregar contenido visible en la página -->
+    <h1 class="titulo">Hola, mundo!</h1>
+    <!-- La etiqueta h1 define un encabezado de nivel 1. El atributo class se utiliza para asignar una clase CSS al elemento -->
+
+    <p class="parrafo">Este es un ejemplo de una página HTML básica.</p>
+    <!-- La etiqueta p define un párrafo de texto. El atributo class se utiliza para asignar una clase CSS al elemento -->
+
+    <a href="https://www.example.com" class="enlace">Enlace</a>
+    <!-- La etiqueta a define un enlace. 
+    El atributo href especifica la URL a la que se dirige el enlace. 
+    El atributo class se utiliza para asignar una clase CSS al elemento -->
+
+    <img src="imagen.jpg" alt="Descripción de la imagen" class="imagen" id="imagen1">
+    <!-- La etiqueta img muestra una imagen. 
+    El atributo src especifica la ruta de la imagen y el atributo alt proporciona una descripción alternativa para la imagen. 
+    El atributo class se utiliza para asignar una clase CSS al elemento. 
+    El atributo id se utiliza para identificar de manera única el elemento -->
+
+    <table>
+        <!-- Encabezado de la tabla -->
+        <thead>
+            <!-- Fila del encabezado -->
+            <tr>
+                <!-- Celda del encabezado -->
+                <th>Nombre</th>
+                <!-- Celda del encabezado -->
+                <th>Edad</th>
+                <!-- Celda del encabezado -->
+                <th>País</th>
+            </tr>
+        </thead>
+        <!-- Cuerpo de la tabla -->
+        <tbody>
+            <!-- Fila de datos -->
+            <tr>
+                <!-- Celda de datos -->
+                <td>John Doe</td>
+                <!-- Celda de datos -->
+                <td>30</td>
+                <!-- Celda de datos -->
+                <td>Estados Unidos</td>
+            </tr>
+            <!-- Fila de datos -->
+            <tr>
+                <!-- Celda de datos -->
+                <td>Jane Smith</td>
+                <!-- Celda de datos -->
+                <td>25</td>
+                <!-- Celda de datos -->
+                <td>Canadá</td>
+            </tr>
+            <!-- Fila de datos -->
+            <tr>
+                <!-- Celda de datos -->
+                <td>Carlos García</td>
+                <!-- Celda de datos -->
+                <td>35</td>
+                <!-- Celda de datos -->
+                <td>México</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Lista de compras:</h2>
+    <!-- Inicio de la lista desordenada -->
+    <ul>
+        <!-- Elemento de la lista -->
+        <li>Manzanas</li>
+        <!-- Elemento de la lista -->
+        <li>Plátanos</li>
+        <!-- Elemento de la lista -->
+        <li>Leche</li>
+        <!-- Elemento de la lista -->
+        <li>Pan</li>
+    </ul>
+    <!-- Fin de la lista desordenada -->
+
+    <h2>Lista de tareas:</h2>
+    <!-- Inicio de la lista ordenada -->
+    <ol>
+        <!-- Elemento de la lista -->
+        <li>Ir al supermercado</li>
+        <!-- Elemento de la lista -->
+        <li>Lavar el auto</li>
+        <!-- Elemento de la lista -->
+        <li>Hacer ejercicio</li>
+        <!-- Elemento de la lista -->
+        <li>Estudiar para el examen</li>
+    </ol>
+    <!-- Fin de la lista ordenada -->
+
+    <h2>Formulario de contacto</h2>
+    <form action="procesar.js" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <!-- También puedes agregar comentarios para hacer anotaciones -->
+    <!-- Este es un comentario HTML -->
+
+    <!-- Recuerda cerrar todas las etiquetas correctamente -->
+</body>
+</html>
