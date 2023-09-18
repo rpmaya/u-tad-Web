@@ -1,0 +1,24 @@
+h1 {
+    color: blue;
+    text-align: center;
+  }
+  
+  p {
+    color: darkgray;
+    margin: 15px;
+  }
+  
+  ul {
+    border: 2px dotted black;
+  }
+  
+  /* Estilo para el párrafo destacado por ID */
+  #destacado {
+    background-color: yellow;
+  }
+  
+  /* Estilo para el elemento de la lista con clase 'importante' */
+  .importante {
+    font-weight: bold;
+  }
+  
