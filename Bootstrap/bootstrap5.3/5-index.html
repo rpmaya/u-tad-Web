@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Similar a https://bootstrapmade.com/demo/Arsha/ -->
 
 <head>
     <meta charset="utf-8">
@@ -7,7 +8,10 @@
     <title>Bootstrap 5.3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="styles/main.css" rel="stylesheet"> <!-- Mi css personalizado-->
+    <!--Iconos de Bootstrap: https://icons.getbootstrap.com/#install-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Mi css personalizado-->
+    <link href="styles/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -77,6 +81,153 @@
         </button>
     </div>
 
+    <!-- https://getbootstrap.com/docs/5.3/utilities/colors/#colors -->
+    <!--Si solo pongo col, bootstrap lo ajusta automáticamente -->
+    <!--
+    <div class="container-fluid bg-light py-5 text-center">
+        <div class="row"> 
+            <div class="col-sm-6 col-md-4 col-lg-2">1</div>
+            <div class="col-sm-6 col-md-4 col-lg-2">1</div>
+            <div class="col-sm-6 col-md-4 col-lg-2">1</div>
+            <div class="col-sm-6 col-md-4 col-lg-2">1</div>
+            <div class="col-sm-6 col-md-4 col-lg-2">1</div>
+            <div class="col-sm-6 col-md-4 col-lg-2">1</div>
+        </div> 
+    </div>
+    -->
+
+    <div class="container mt-5">
+        <h2 class="text-center">ACERCA DE</h2>
+        <div class="row">
+            <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laboriosam aspernatur sed ad
+                ducimus, repellat eligendi qui rem, velit recusandae quibusdam sunt reiciendis! Temporibus fuga rem
+                officiis magni deserunt nobis.</div>
+            <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laboriosam aspernatur sed ad
+                ducimus, repellat eligendi qui rem, velit recusandae quibusdam sunt reiciendis! Temporibus fuga rem
+                officiis magni deserunt nobis.</div>
+        </div>
+        <!--Si queremos crear una lista: https://getbootstrap.com/docs/5.3/components/list-group/-->
+    </div>
+
+    <!--Tarjetas-->
+    <div class="container mt-5 d-none d-md-block">
+        <!-- d-node es para que no se muestre a no ser que sea de tamaño medio d-md-block-->
+        <div class="row">
+            <!--Creamos tarjetas: https://getbootstrap.com/docs/5.3/components/card/ -->
+            <div class="col-md-4">
+                <div class="card border-0 text-center"> <!--Quitamos el style-->
+                    <img src="img/card-1.jpg" class="card-img-top rounded-circle" alt="...">
+                    <!--Ej. imagen redondeada-->
+                    <div class="card-body">
+                        <h5 class="card-title">Máster</h5>
+                        <p class="card-tet">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 text-center"> <!--Quitamos el style-->
+                    <img src="img/card-2.jpg" class="card-img-top rounded-circle" alt="...">
+                    <!--Ej. imagen redondeada-->
+                    <div class="card-body">
+                        <h5 class="card-title">Máster</h5>
+                        <p class="card-tet">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 text-center"> <!--Quitamos el style-->
+                    <img src="img/card-3.jpg" class="card-img-top rounded-circle" alt="...">
+                    <!--Ej. imagen redondeada-->
+                    <div class="card-body">
+                        <h5 class="card-title">Máster</h5>
+                        <p class="card-tet">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--- Tarjetas horizontales: https://getbootstrap.com/docs/5.3/components/card/#horizontal -->
+    <div class="container">
+        <div class="card mb-3 border-0"> <!--Quitamos style y le ponemos border-0-->
+            <div class="row g-0"> <!-- g-0 elimina los Gutters (padding o espacio entre columnas)-->
+                <div class="col-md-5"> <!--Cambiamos los tamaños de 4-8 a 5-7-->
+                    <img src="img/slider-3.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <h2 class="card-title">DATA ANALYTICS MASTER</h2> <!--Aqui personalizamos-->
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer. Lorem, ipsum dolor sit amet
+                            consectetur adipisicing elit. Quia, accusantium et ipsam aut dolor eius nobis temporibus
+                            nesciunt, doloremque consequuntur aliquid id! Excepturi beatae quasi voluptatum odio sunt
+                            architecto aspernatur!</p>
+                        <!--Podemos crear un botón o un enlace con la clase botón-->
+                        <!--Si lo queremos centrado lo tenemos que meter dentro de un div con la propiedad text-center-->
+                        <div class="text-center"><a href="#" class="btn btn-success btn-lg">INSCRIBIR</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Para la segunda tarjeta horizontal, ponemos primero el texto y después la imagen-->
+    <div class="container">
+        <div class="card mb-3 border-0"> <!--Quitamos style y le ponemos border-0-->
+            <div class="row g-0">
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <h2 class="card-title">CYBERSECURITY MASTER</h2> <!--Aqui personalizamos-->
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer. Lorem, ipsum dolor sit amet
+                            consectetur adipisicing elit. Quia, accusantium et ipsam aut dolor eius nobis temporibus
+                            nesciunt, doloremque consequuntur aliquid id! Excepturi beatae quasi voluptatum odio sunt
+                            architecto aspernatur!</p>
+                        <!--Podemos crear un botón o un enlace con la clase botón-->
+                        <!--Si lo queremos centrado lo tenemos que meter dentro de un div con la propiedad text-center-->
+                        <div class="text-center"><a href="#" class="btn btn-success btn-lg">INSCRIBIR</a></div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img src="img/slider-2.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <div class="container-fluid bg-dark p-5 text-center">
+            <div class="row">
+                <!--Decoramos el texto: https://getbootstrap.esdocu.com/docs/5.1/utilities/text/#decoraci%C3%B3n-de-texto-->
+                    <!--Quitamos el subrayado del enlace y personalizamos el color-->
+                <div class="col">
+                    <!--Por ejemplo importo el icono de facebook: https://icons.getbootstrap.com/icons/facebook/-->
+                    <a href="#" class="text-decoration-none text-success"><i class="bi bi-facebook"></i> Masters</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-success">Tutoriales</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-success">Descargas</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-success">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Para otros componentes o utilidades buscar en la doc: https://getbootstrap.com/docs/5.3/getting-started/introduction/-->
 
     <!--Si lo comprimo aparecen puntos que al pincharlos despliega el menú, es una funcionalidad que requiere js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
