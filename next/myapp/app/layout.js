@@ -22,11 +22,9 @@ export default function RootLayout({ children }) {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <head>
-        <title>My App</title>
-      </head>
       <body>
         <h1>Navbar</h1>
+        
         {children}
       </body>
     </html>
