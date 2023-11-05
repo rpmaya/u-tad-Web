@@ -1,0 +1,26 @@
+Diseñar con Bootstrap y React una Single Page que simule un torneo de Pádel o similar:
+
+1) Iniciar proyecto react: npx create-react-app campeonato
+2) Instalar bootstrap con "npm i react-bootstrap bootstrap"
+3) Descargar datos de participantes desde https://jsonplaceholder.typicode.com/users con fetch
+4) Mostrar la lista de participantes en pantalla desde los datos descargados, cada participante tendrá un botón que extenderá los detalles del mismo (usad accordion o collapse de Bootstrap).
+5) Crear un botón para sortear enfrentamientos de manera aleatoria, almacenarlo en una variable de estado “matches” tipo [ {pista, jugador1, jugador2, resultado}, ... ] y mostrarlo en una tabla de bootstrap (haz uso de un componente hijo para cada enfrentamiento y pásale la variable de estado anterior como prop.
+6) Crear un botón para obtener los resultados de los enfrentamientos de manera aleatoria, actualizando la variable de estado, en concreto, el campo "resultado".
+7) Crea un carrousel de Bootstrap para visualizar los resultados.
+8) Guarda tu variable de estado con el array de tus partidos en la cache del navegador y también simulando con fetch una llamada POST al backend al pulsar un botón “Salvar” (aunque no funcione, déjalo preparado para cuando hagamos el backend en el 2Q)
+9) El diseño está abierto (pero que sea responsive).
+
+Nota Este ejemplo sería para hacerlo automáticamente cuando cambia tu variable de estado “matches”, de momento, hazlo en una función flecha que se ejecute al pulsar un botón “save” (aunque de momento sabemos que no funcionará porque no tenemos backend).
+
+useEffect(() => {
+    // POST request using fetch inside useEffect React hook
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({data: matches})
+    };
+    fetch('https://your.domain/api/posts', requestOptions)
+        .then(response => response.json())
+        .then(data => setPostId(data.id));
+//}, []); //empty dependency array means this effect will only run once
+}, [matches]);//state var dependency array means this effect will only run when yourData changes
