@@ -3,6 +3,8 @@ useState
 useEffect
 */
 /* Pero en next puedo hacer peticiones de datos desde el server (de forma asíncrona) */
+
+//React Server Component
 import PostCard from '../../components/PostCard'
 
 async function loadPosts() {

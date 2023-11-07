@@ -1,5 +1,5 @@
 "use client"
-
+// React Client Component
 async function PostCard({ post }) {
 
     return <div>
