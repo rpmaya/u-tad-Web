@@ -8,9 +8,13 @@ useEffect
 import PostCard from '../../components/PostCard'
 
 async function loadPosts() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-    const data = await res.json()
-    return data
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data = await res.json();
+
+    /* Fuerzo para que tarde 3 segundos, solo para probar el "Loading..." */
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+
+    return data;
 }
 
 //renderiza
