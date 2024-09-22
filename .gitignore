@@ -4,4 +4,5 @@ coverage
 coverage.json
 typechain
 ajaxenv
+test
 __pycache__
