@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <title>Ejemplo uso formularios</title>
@@ -8,11 +9,16 @@
         <h1>Cálculo de Área de un Triángulo</h1>
         <p>Introduzca base y altura del triángulo</p>
         <form>
-            Base del triángulo : <input type="text" size="4" id="base"/><br>
-            Altura del triángulo: <input type="text" size="3" id="altura"/><br><hr>
-            <input type="button" value = "Calcular área" onclick = "calcularArea()"><hr><br>
-            El área del triángulo es = <input type="text" size="3" id="resultado">
+            <label for="base">Base del triángulo: </label> 
+            <input type="text" size="4" id="base"/><br>
+            <label for="altura">Altura del triángulo: </label>
+            <input type="text" size="3" id="altura"/><br><hr>
+            
+            <input type="button" value = "Calcular área" onclick = "calcularArea()">
             <input type="reset" value="Borrar">
+            <hr><br>
+            <label for="resultado">El área del triángulo es =</label>
+            <input type="text" size="3" id="resultado" readonly>
         </form>
     </body>
 </html>
