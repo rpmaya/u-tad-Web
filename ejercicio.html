@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .controls {
+            padding: 25px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .control-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-group label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        select, .btn {
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+            border-color: #95a5a6;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 25px;
+            background: #ecf0f1;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 25px;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .book-card.available {
+            border-left-color: #27ae60;
+        }
+
+        .book-card.borrowed {
+            border-left-color: #e74c3c;
+        }
+
+        .book-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .book-author {
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .book-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .book-year {
+            background: #3498db;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .book-genre {
+            background: #9b59b6;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .book-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status-available {
+            background: #d5f4e6;
+            color: #27ae60;
+        }
+
+        .status-borrowed {
+            background: #fadbd8;
+            color: #e74c3c;
+        }
+
+        .loan-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .loan-btn.available {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .loan-btn.borrowed {
+            background: #27ae60;
+            color: white;
+        }
+
+        .loan-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 50px;
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .control-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-group {
+                justify-content: center;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Biblioteca Digital</h1>
+            <p>Sistema de gestión de libros y préstamos</p>
+        </div>
+
+        <div class="controls">
+            <div class="control-row">
+                <input type="text" id="searchInput" class="search-box" 
+                       placeholder="Buscar por título o autor..." 
+                       onkeyup="applyFilters()">
+                
+                <div class="filter-group">
+                    <label>Género:</label>
+                    <select id="genreFilter" onchange="applyFilters()">
+                        <option value="">Todos los géneros</option>
+                        <option value="Ficción">Ficción</option>
+                        <option value="No Ficción">No Ficción</option>
+                        <option value="Ciencia">Ciencia</option>
+                        <option value="Historia">Historia</option>
+                        <option value="Arte">Arte</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Estado:</label>
+                    <select id="availabilityFilter" onchange="applyFilters()">
+                        <option value="">Todos</option>
+                        <option value="true">Disponibles</option>
+                        <option value="false">Prestados</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Período:</label>
+                    <select id="yearFilter" onchange="applyFilters()">
+                        <option value="">Todos los años</option>
+                        <option value="recent">Últimos 10 años</option>
+                        <option value="classic">Clásicos (antes de 1990)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-row">
+                <div class="filter-group">
+                    <label>Ordenar por:</label>
+                    <select id="sortBy" onchange="applySorting()">
+                        <option value="titulo">Título</option>
+                        <option value="autor">Autor</option>
+                        <option value="año">Año</option>
+                    </select>
+                    
+                    <button class="btn btn-secondary" onclick="toggleSortOrder()">
+                        <span id="sortOrder">↑ Ascendente</span>
+                    </button>
+                </div>
+
+                <button class="btn" onclick="resetFilters()">
+                    Limpiar Filtros
+                </button>
+            </div>
+        </div>
+
+        <div class="stats" id="statsContainer">
+            <!-- Las estadísticas se generarán dinámicamente -->
+        </div>
+
+        <div class="books-grid" id="booksGrid">
+            <!-- Los libros se generarán dinámicamente -->
+        </div>
+    </div>
+
+    <script>
+        // Array inicial de libros usando objetos con todas las propiedades requeridas
+        let biblioteca = [
+            { id: 1, titulo: "Cien años de soledad", autor: "Gabriel García Márquez", año: 1967, genero: "Ficción", disponible: true },
+            { id: 2, titulo: "1984", autor: "George Orwell", año: 1949, genero: "Ficción", disponible: false },
+            { id: 3, titulo: "El origen de las especies", autor: "Charles Darwin", año: 1859, genero: "Ciencia", disponible: true },
+            { id: 4, titulo: "Sapiens", autor: "Yuval Noah Harari", año: 2011, genero: "Historia", disponible: true },
+            { id: 5, titulo: "El arte de amar", autor: "Erich Fromm", año: 1956, genero: "No Ficción", disponible: false },
+            { id: 6, titulo: "Historia del arte", autor: "Ernst Gombrich", año: 1950, genero: "Arte", disponible: true },
+            { id: 7, titulo: "Dune", autor: "Frank Herbert", año: 1965, genero: "Ficción", disponible: true },
+            { id: 8, titulo: "Una breve historia del tiempo", autor: "Stephen Hawking", año: 1988, genero: "Ciencia", disponible: false },
+            { id: 9, titulo: "21 lecciones para el siglo XXI", autor: "Yuval Noah Harari", año: 2018, genero: "No Ficción", disponible: true },
+            { id: 10, titulo: "Los pilares de la Tierra", autor: "Ken Follett", año: 1989, genero: "Historia", disponible: true },
+            { id: 11, titulo: "El código Da Vinci", autor: "Dan Brown", año: 2003, genero: "Ficción", disponible: false },
+            { id: 12, titulo: "Cosmos", autor: "Carl Sagan", año: 1980, genero: "Ciencia", disponible: true },
+            { id: 13, titulo: "El mundo de Sofía", autor: "Jostein Gaarder", año: 1991, genero: "Ficción", disponible: true },
+            { id: 14, titulo: "Pintura moderna", autor: "Paul Valéry", año: 1935, genero: "Arte", disponible: true },
+            { id: 15, titulo: "Homo Deus", autor: "Yuval Noah Harari", año: 2015, genero: "Historia", disponible: false }
+        ];
+
+        let librosFiltrados = [...biblioteca];
+        let ordenAscendente = true;
+
+        // Función para renderizar la biblioteca usando map
+        function renderizarBiblioteca(libros = librosFiltrados) {
+            const grid = document.getElementById('booksGrid');
+            
+            if (libros.length === 0) {
+                grid.innerHTML = '<div class="no-results">No se encontraron libros que coincidan con los filtros.</div>';
+                return;
+            }
+
+            // Usar map para crear el HTML de cada libro
+            const tarjetasHTML = libros.map(libro => {
+                const { id, titulo, autor, año, genero, disponible } = libro; // Destructuring
+                
+                return `
+                    <div class="book-card ${disponible ? 'available' : 'borrowed'}">
+                        <div class="book-title">${titulo}</div>
+                        <div class="book-author">por ${autor}</div>
+                        <div class="book-details">
+                            <span class="book-year">${año}</span>
+                            <span class="book-genre">${genero}</span>
+                        </div>
+                        <div class="book-status">
+                            <span class="status-badge ${disponible ? 'status-available' : 'status-borrowed'}">
+                                ${disponible ? 'Disponible' : 'Prestado'}
+                            </span>
+                            <button class="loan-btn ${disponible ? 'available' : 'borrowed'}" 
+                                    onclick="cambiarEstadoPrestamo(${id})">
+                                ${disponible ? 'Prestar' : 'Devolver'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            grid.innerHTML = tarjetasHTML;
+        }
+
+        // Función que usa rest parameters para calcular estadísticas
+        function calcularEstadisticas(...libros) {
+            // Usar destructuring con valores por defecto
+            const [librosParaAnalizar = biblioteca] = libros.length ? libros : [biblioteca];
+            
+            const total = librosParaAnalizar.length;
+            
+            // Usar filter para contar disponibles y prestados
+            const disponibles = librosParaAnalizar.filter(libro => libro.disponible).length;
+            const prestados = total - disponibles;
+            
+            // Usar reduce para encontrar años extremos
+            const { añoMinimo, añoMaximo } = librosParaAnalizar.reduce((acc, libro) => ({
+                añoMinimo: Math.min(acc.añoMinimo, libro.año),
+                añoMaximo: Math.max(acc.añoMaximo, libro.año)
+            }), { añoMinimo: Infinity, añoMaximo: -Infinity });
+
+            return { total, disponibles, prestados, añoMinimo, añoMaximo };
+        }
+
+        // Función para renderizar estadísticas
+        function renderizarEstadisticas() {
+            const stats = calcularEstadisticas(librosFiltrados);
+            const container = document.getElementById('statsContainer');
+            
+            container.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${stats.total}</div>
+                    <div class="stat-label">Total de libros</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${stats.disponibles}</div>
+                    <div class="stat-label">Disponibles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${stats.prestados}</div>
+                    <div class="stat-label">Prestados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${stats.añoMinimo} - ${stats.añoMaximo}</div>
+                    <div class="stat-label">Rango de años</div>
+                </div>
+            `;
+        }
+
+        // Función para cambiar estado de préstamo usando find
+        function cambiarEstadoPrestamo(id) {
+            const libro = biblioteca.find(libro => libro.id === id);
+            if (libro) {
+                libro.disponible = !libro.disponible;
+                applyFilters(); // Re-aplicar filtros para actualizar vista
+            }
+        }
+
+        // Función principal de filtrado que combina múltiples criterios
+        function applyFilters() {
+            const textoBusqueda = document.getElementById('searchInput').value.toLowerCase();
+            const generoFiltro = document.getElementById('genreFilter').value;
+            const disponibilidadFiltro = document.getElementById('availabilityFilter').value;
+            const periodoFiltro = document.getElementById('yearFilter').value;
+
+            librosFiltrados = biblioteca.filter(libro => {
+                // Filtro de búsqueda por texto (título o autor)
+                const coincideTexto = libro.titulo.toLowerCase().includes(textoBusqueda) || 
+                                     libro.autor.toLowerCase().includes(textoBusqueda);
+                
+                // Filtro por género
+                const coincideGenero = !generoFiltro || libro.genero === generoFiltro;
+                
+                // Filtro por disponibilidad
+                const coincideDisponibilidad = disponibilidadFiltro === '' || 
+                                              libro.disponible.toString() === disponibilidadFiltro;
+                
+                // Filtro por período
+                let coincidePeriodo = true;
+                if (periodoFiltro === 'recent') {
+                    coincidePeriodo = libro.año >= (new Date().getFullYear() - 10);
+                } else if (periodoFiltro === 'classic') {
+                    coincidePeriodo = libro.año < 1990;
+                }
+
+                return coincideTexto && coincideGenero && coincideDisponibilidad && coincidePeriodo;
+            });
+
+            applySorting();
+        }
+
+        // Función para aplicar ordenamiento
+        function applySorting() {
+            const criterio = document.getElementById('sortBy').value;
+            
+            librosFiltrados.sort((a, b) => {
+                let valorA, valorB;
+                
+                // Determinar valores a comparar usando el criterio
+                switch(criterio) {
+                    case 'titulo':
+                        valorA = a.titulo.toLowerCase();
+                        valorB = b.titulo.toLowerCase();
+                        break;
+                    case 'autor':
+                        valorA = a.autor.toLowerCase();
+                        valorB = b.autor.toLowerCase();
+                        break;
+                    case 'año':
+                        valorA = a.año;
+                        valorB = b.año;
+                        break;
+                    default:
+                        valorA = a.titulo.toLowerCase();
+                        valorB = b.titulo.toLowerCase();
+                }
+
+                // Aplicar orden ascendente o descendente
+                if (valorA < valorB) return ordenAscendente ? -1 : 1;
+                if (valorA > valorB) return ordenAscendente ? 1 : -1;
+                return 0;
+            });
+
+            renderizarBiblioteca();
+            renderizarEstadisticas();
+        }
+
+        // Función para cambiar orden de clasificación
+        function toggleSortOrder() {
+            ordenAscendente = !ordenAscendente;
+            const orderBtn = document.getElementById('sortOrder');
+            orderBtn.textContent = ordenAscendente ? '↑ Ascendente' : '↓ Descendente';
+            applySorting();
+        }
+
+        // Función para resetear todos los filtros
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('genreFilter').value = '';
+            document.getElementById('availabilityFilter').value = '';
+            document.getElementById('yearFilter').value = '';
+            document.getElementById('sortBy').value = 'titulo';
+            ordenAscendente = true;
+            document.getElementById('sortOrder').textContent = '↑ Ascendente';
+            
+            librosFiltrados = [...biblioteca]; // Usar spread operator
+            applySorting();
+        }
+
+        // Inicializar la aplicación
+        function inicializar() {
+            librosFiltrados = [...biblioteca];
+            renderizarBiblioteca();
+            renderizarEstadisticas();
+        }
+
+        // Ejecutar al cargar la página
+        inicializar();
+    </script>
+</body>
+</html>
