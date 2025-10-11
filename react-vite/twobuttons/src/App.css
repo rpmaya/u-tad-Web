@@ -1,0 +1,94 @@
+.App {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.botones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #535bf2;
+}
+
+button.reset {
+  background-color: #dc3545;
+}
+
+button.reset:hover {
+  background-color: #c82333;
+}
+
+.resultado {
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.resultado h2 {
+  color: #646cff;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.resultado .nota {
+  color: #28a745;
+  font-weight: 500;
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+}
+
+.explicacion {
+  background-color: #d4edda;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+  text-align: left;
+}
+
+.explicacion h3 {
+  margin-top: 0;
+  color: #155724;
+}
+
+.explicacion p {
+  color: #155724;
+  line-height: 1.6;
+}
+
+.explicacion ol,
+.explicacion ul {
+  color: #155724;
+  line-height: 1.8;
+}
+
+.explicacion code {
+  background-color: #fff;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: monospace;
+  color: #d63384;
+}
