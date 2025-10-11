@@ -1,0 +1,23 @@
+.estaciones {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.estaciones h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+}
