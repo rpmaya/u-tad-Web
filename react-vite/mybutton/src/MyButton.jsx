@@ -15,10 +15,15 @@ function MyButton({ nombre, mensaje }) {
     alert(mensaje);
   };
 
+  const handleClick2 = (message) => {
+    alert(message)
+  }
+
   return (
     // Botón que ejecuta handleClick al hacer click
     // El texto del botón es el valor de la prop "nombre"
-    <button onClick={handleClick}>
+    //<button onClick={() => handleClick2('hola')}>
+    <button onClick={handleClick}> 
       {nombre}
     </button>
   );
